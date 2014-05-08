@@ -1,9 +1,8 @@
 /*------------------------------------*\
-    $MOBILE TAB
+    $ACCORDIAN
 \*------------------------------------*/
 
 .accordian{
-  // http://colinaarts.com/articles/the-magic-of-overflow-hidden/
   overflow: hidden;
 }
 
@@ -13,7 +12,7 @@
 
     .accordian.is-inactive > &, .accordian.is-inactive > &:before{
       cursor:auto;
-      color:$grey!important;
+      color:$gray!important;
     }
   }
 
@@ -25,41 +24,6 @@
     }
   }
 
-.accordian--expand{
-  > .accordian__title{
-    @extend %icon;
-    @extend .icon--expand;
-
-    &:before{
-      color:$brand-color;
-      margin-right: $half-spacing-unit;
-    }
-  }
-
-  &.is-active > .accordian__title{
-    @extend .icon--contract;
-  }
-}
-
-.accordian--arrow{
-  > .accordian__title{
-    @extend %icon;
-    @extend .icon--arrow-right-2;
-
-    &:before{
-      color:$brand-color;
-      margin-right: $half-spacing-unit;
-    }
-  }
-
-  &.is-active > .accordian__title{
-    @extend .icon--arrow-up-2;
-    &:before{
-      color:$red;
-    }
-  }
-}
-
 @include quick-media-query(medium){
   .accordian--small{
     > .accordian__title{
@@ -69,7 +33,7 @@
       }
     }
     > .accordian__content{
-      display:block!important;
+      display:block;
     }
   }
 }
