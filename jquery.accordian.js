@@ -26,7 +26,7 @@ meaning the markup is quite manipulatable.
   <html>
     <!-- Normal Accordian -->
     <div class="js-accordian accordian">
-      <h6 class="accordian__title">Click Here<h6/>
+      <h6 class="accordian__title">Click Here</h6>
       <div class="accordian__content">
         The content inside of the accordian.
       </div>
@@ -34,7 +34,7 @@ meaning the markup is quite manipulatable.
 
     <!-- Active Accordian -->
     <div class="js-accordian accordian is-active">
-      <h6 class="accordian__title">Click Here<h6/>
+      <h6 class="accordian__title">Click Here</h6>
       <div class="accordian__content">
         The content inside of the accordian.
       </div>
@@ -42,7 +42,7 @@ meaning the markup is quite manipulatable.
 
     <!-- Only accordian on small devices -->
     <div class="js-accordian accordian accordian--small">
-      <h6 class="accordian__title">Click Here<h6/>
+      <h6 class="accordian__title">Click Here</h6>
       <div class="accordian__content">
         The content inside of the accordian.
       </div>
