@@ -1,19 +1,19 @@
 /**
  * @fileoverview
 
-  A jQuery plugin to build accordian's. The plugin works mostly with CSS,
-  meaning the markup is quite manipulatable.
+A jQuery plugin to build accordian's. The plugin works mostly with CSS,
+meaning the markup is quite manipulatable.
 
-  ### Notes
-  - Requires an include to ``accordian.scss`` in your Gemini build
+### Notes
+- Requires an include to ``accordian.scss`` in your Gemini build
 
-  ### Features
-  - You can activate an accordian on load by adding the CSS class ``is-active``
-  - You can make something an accordian *only on small devices* using the class
-  ``accordian--small``
+### Features
+- You can activate an accordian on load by adding the CSS class ``is-active``
+- You can make something an accordian *only on small devices* using the class
+``accordian--small``
 
  *
- * @namespace - jquery.accordian
+ * @namespace jquery.accordian
  * @copyright Carpages.ca 2014
  * @author Matt Rose <matt@mattrose.ca>
  *
@@ -24,12 +24,12 @@
  *
  * @example
   <html>
-		<!-- Normal Accordian -->
+    <!-- Normal Accordian -->
     <div class="js-accordian accordian">
-			<h6 class="accordian__title">Click Here<h6/>
-			<div class="accordian__content">
-				The content inside of the accordian.
-			</div>
+      <h6 class="accordian__title">Click Here<h6/>
+      <div class="accordian__content">
+        The content inside of the accordian.
+      </div>
     </div>
 
     <!-- Active Accordian -->
@@ -53,8 +53,8 @@
   $('.js-accordian').accordian();
  */
 define(['jquery-loader', 'jquery.boiler'], function($){
-	$.boiler('accordian', {
-		defaults: {
+  $.boiler('accordian', {
+    defaults: {
       /**
        * The selector that works as an anchor to open and close the accordian
        *
@@ -62,20 +62,20 @@ define(['jquery-loader', 'jquery.boiler'], function($){
        * @type string
        * @default '.accordian__title'
        */
-			anchor: '.accordian__title'
-		},
+      anchor: '.accordian__title'
+    },
 
-		init: function(){
-			var plugin = this;
+    init: function(){
+      var plugin = this;
 
-			//event
-			var $anchor = plugin.$el.find(plugin.settings.anchor);
+      //event
+      var $anchor = plugin.$el.find(plugin.settings.anchor);
 
-			$anchor.on('click', function(e){
-				e.preventDefault();
-				plugin.toggle.call(plugin);
-			});
-		},
+      $anchor.on('click', function(e){
+        e.preventDefault();
+        plugin.toggle.call(plugin);
+      });
+    },
 
     /**
      * Toggle the opened or closed state of the accordian
@@ -83,17 +83,17 @@ define(['jquery-loader', 'jquery.boiler'], function($){
      * @method
      * @name jquery.accordian#toggle
     **/
-		toggle: function(e){
-			var plugin = this;
+    toggle: function(e){
+      var plugin = this;
 
-			if(!plugin.$el.hasClass('is-inactive')){
-				plugin.$el.toggleClass('is-active');
-			}
-		}
-	});
+      if(!plugin.$el.hasClass('is-inactive')){
+        plugin.$el.toggleClass('is-active');
+      }
+    }
+  });
 
-	// Return the jquery object
-	// This way you don't need to require both jquery and the plugin
-	return $;
+  // Return the jquery object
+  // This way you don't need to require both jquery and the plugin
+  return $;
 
 });
