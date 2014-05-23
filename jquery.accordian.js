@@ -25,7 +25,7 @@
  * @example
   <html>
 		<!-- Normal Accordian -->
-    <div class="accordian">
+    <div class="js-accordian accordian">
 			<h6 class="accordian__title">Click Here<h6/>
 			<div class="accordian__content">
 				The content inside of the accordian.
@@ -33,7 +33,7 @@
     </div>
 
     <!-- Active Accordian -->
-    <div class="accordian is-active">
+    <div class="js-accordian accordian is-active">
       <h6 class="accordian__title">Click Here<h6/>
       <div class="accordian__content">
         The content inside of the accordian.
@@ -41,7 +41,7 @@
     </div>
 
     <!-- Only accordian on small devices -->
-    <div class="accordian accordian--small">
+    <div class="js-accordian accordian accordian--small">
       <h6 class="accordian__title">Click Here<h6/>
       <div class="accordian__content">
         The content inside of the accordian.
@@ -50,7 +50,7 @@
   </html>
  *
  * @example
-  $('.accordian').accordian();
+  $('.js-accordian').accordian();
  */
 define(['jquery-loader', 'jquery.boiler'], function($){
 	$.boiler('accordian', {
