@@ -13,14 +13,13 @@ meaning the markup is quite manipulatable.
 ``accordian--small``
 
  *
- * @namespace jquery.accordian
+ * @namespace gemini.accordian
  * @copyright Carpages.ca 2014
  * @author Matt Rose <matt@mattrose.ca>
  *
- * @requires jquery
- * @requires jquery.boiler
+ * @requires gemini
  *
- * @prop {string} anchor {@link jquery.accordian#anchor}
+ * @prop {string} anchor {@link gemini.accordian#anchor}
  *
  * @example
   <html>
@@ -52,13 +51,13 @@ meaning the markup is quite manipulatable.
  * @example
   $('.js-accordian').accordian();
  */
-define(['jquery-loader', 'jquery.boiler'], function($){
+define(['gemini'], function($){
   $.boiler('accordian', {
     defaults: {
       /**
        * The selector that works as an anchor to open and close the accordian
        *
-       * @name jquery.accordian#anchor
+       * @name gemini.accordian#anchor
        * @type string
        * @default '.accordian__title'
        */
@@ -81,7 +80,7 @@ define(['jquery-loader', 'jquery.boiler'], function($){
      * Toggle the opened or closed state of the accordian
      *
      * @method
-     * @name jquery.accordian#toggle
+     * @name gemini.accordian#toggle
     **/
     toggle: function(e){
       var plugin = this;
