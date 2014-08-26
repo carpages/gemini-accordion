@@ -1,11 +1,11 @@
 {
-  "name": "gemini-accordian",
+  "name": "gemini-accordion",
   "authors": [
     {"name": "Matt Rose", "email": "matt@mattrose.ca"}
   ],
   "main": [
-    "gemini.accordian.js",
-    "sass/accordian.scss"
+    "gemini.accordion.js",
+    "sass/accordion.scss"
   ],
   "ignore": [],
   "dependencies": {

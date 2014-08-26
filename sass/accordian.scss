@@ -1,38 +1,38 @@
 /*------------------------------------*\
-    $ACCORDIAN
+    $ACCORDION
 \*------------------------------------*/
 
-.accordian{
+.accordion{
   overflow: hidden;
 }
 
-  .accordian__title{
+  .accordion__title{
     cursor:pointer;
     @extend .unselectable;
 
-    .accordian.is-inactive > &, .accordian.is-inactive > &:before{
+    .accordion.is-inactive > &, .accordion.is-inactive > &:before{
       cursor:auto;
       color:$grey!important;
     }
   }
 
-  .accordian__content{
+  .accordion__content{
     display:none;
 
-    .accordian.is-active > &{
+    .accordion.is-active > &{
       display:block;
     }
   }
 
 @include quick-media-query(medium){
-  .accordian--small{
-    > .accordian__title{
+  .accordion--small{
+    > .accordion__title{
       cursor:inherit;
       &:before{
         display:none;
       }
     }
-    > .accordian__content{
+    > .accordion__content{
       display:block;
     }
   }
