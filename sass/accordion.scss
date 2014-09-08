@@ -2,38 +2,38 @@
     $ACCORDION
 \*------------------------------------*/
 
-.accordion{
+.accordion {
   overflow: hidden;
 }
 
-  .accordion__title{
-    cursor:pointer;
+  .accordion__title {
+    cursor: pointer;
     @extend .unselectable;
 
-    .accordion.is-inactive > &, .accordion.is-inactive > &:before{
-      cursor:auto;
-      color:$grey!important;
+    .accordion.is-inactive > &, .accordion.is-inactive > &:before {
+      cursor: auto;
+      color: $grey !important;
     }
   }
 
-  .accordion__content{
-    display:none;
+  .accordion__content {
+    display: none;
 
-    .accordion.is-active > &{
-      display:block;
+    .accordion.is-active > & {
+      display: block;
     }
   }
 
-@include quick-media-query(medium){
-  .accordion--small{
-    > .accordion__title{
-      cursor:inherit;
-      &:before{
-        display:none;
+@include quick-media-query(medium) {
+  .accordion--small {
+    > .accordion__title {
+      cursor: inherit;
+      &:before {
+        display: none;
       }
     }
-    > .accordion__content{
-      display:block;
+    > .accordion__content {
+      display: block;
     }
   }
 }
