@@ -51,7 +51,19 @@ meaning the markup is quite manipulatable.
  * @example
   $('.js-accordion').accordion();
  */
-define(['gemini'], function($){
+(function(factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['gemini'], factory);
+  } else if (typeof exports === 'object') {
+    // Node/CommonJS
+    module.exports = factory(require('gemini'));
+  } else {
+    // Browser globals
+    factory(G);
+  }
+}(function($) {
+
   $.boiler('accordion', {
     defaults: {
       /**
@@ -95,4 +107,4 @@ define(['gemini'], function($){
   // This way you don't need to require both jquery and the plugin
   return $;
 
-});
+}));
