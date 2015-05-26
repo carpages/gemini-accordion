@@ -1,16 +1,44 @@
-/*------------------------------------*\
-    $ACCORDION
-\*------------------------------------*/
+/**
+ ********************************
+ * _ACCORDION.SCSS
+ ********************************
+ */
+
+/**
+ * @module Accordions [.accordion]
+ * @description Accordions created to work with javascript
+ *
+ * @modifier [.carousel--small] Make the accordion only active on small devices
+ *
+ * @state [.is-active] The state for when the accordion content is showing
+ * @state [.is-active] The state for when the accordion content is inactive
+ *
+ * @markup Accordion
+    <div class="accordion">
+      <h6 class="accordion__title">Click Here</h6>
+      <div class="accordion__content">
+        The content inside of the accordion.
+      </div>
+    </div>
+ */
 
 .accordion {
   overflow: hidden;
 }
 
+  /**
+   * @submodule Accordions Title [.accordion__title]
+   * @description The accordion title, which triggers the content
+   */
   .accordion__title {
     cursor: pointer;
-    @extend .unselectable;
+    @include vendor(user-select, none);
   }
 
+  /**
+   * @submodule Accordions Content [.accordion__content]
+   * @description The accordion content, which shows and hides accordingly
+   */
   .accordion__content {
     display: none;
 
@@ -19,7 +47,7 @@
     }
   }
 
-@include quick-media-query(medium) {
+@include media(medium) {
   .accordion--small {
     > .accordion__title {
       cursor: inherit;
