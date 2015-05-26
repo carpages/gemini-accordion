@@ -9,11 +9,6 @@
   .accordion__title {
     cursor: pointer;
     @extend .unselectable;
-
-    .accordion.is-inactive > &, .accordion.is-inactive > &:before {
-      cursor: auto;
-      color: $grey !important;
-    }
   }
 
   .accordion__content {
