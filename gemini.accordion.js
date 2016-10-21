@@ -51,20 +51,21 @@ meaning the markup is quite manipulatable.
  * @example
   $('.js-accordion').accordion();
  */
-(function(factory) {
-  if (typeof define === 'function' && define.amd) {
+( function( factory ) {
+  if ( typeof define === 'function' && define.amd ) {
     // AMD. Register as an anonymous module.
-    define(['gemini'], factory);
-  } else if (typeof exports === 'object') {
+    define([ 'gemini' ], factory );
+  } else if ( typeof exports === 'object' ) {
     // Node/CommonJS
-    module.exports = factory(require('gemini'));
+    module.exports = factory(
+      require( 'gemini' )
+    );
   } else {
     // Browser globals
-    factory(G);
+    factory( G );
   }
-}(function($) {
-
-  $.boiler('accordion', {
+}( function( $ ) {
+  $.boiler( 'accordion', {
     defaults: {
       /**
        * The selector that works as an anchor to open and close the accordion
@@ -76,15 +77,15 @@ meaning the markup is quite manipulatable.
       anchor: '.accordion__title'
     },
 
-    init: function(){
+    init: function() {
       var plugin = this;
 
-      //event
-      var $anchor = plugin.$el.find(plugin.settings.anchor);
+      // event
+      var $anchor = plugin.$el.find( plugin.settings.anchor );
 
-      $anchor.on('click', function(e){
+      $anchor.on( 'click', function( e ) {
         e.preventDefault();
-        plugin.toggle.call(plugin);
+        plugin.toggle();
       });
     },
 
@@ -94,11 +95,11 @@ meaning the markup is quite manipulatable.
      * @method
      * @name gemini.accordion#toggle
     **/
-    toggle: function(e){
+    toggle: function() {
       var plugin = this;
 
-      if(!plugin.$el.hasClass('is-inactive')){
-        plugin.$el.toggleClass('is-active');
+      if ( !plugin.$el.hasClass( 'is-inactive' )) {
+        plugin.$el.toggleClass( 'is-active' );
       }
     }
   });
@@ -106,5 +107,4 @@ meaning the markup is quite manipulatable.
   // Return the jquery object
   // This way you don't need to require both jquery and the plugin
   return $;
-
 }));
