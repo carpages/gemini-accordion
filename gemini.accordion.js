@@ -58,7 +58,7 @@ meaning the markup is quite manipulatable.
   } else if ( typeof exports === 'object' ) {
     // Node/CommonJS
     module.exports = factory(
-      require( 'gemini' )
+      require( 'gemini-loader' )
     );
   } else {
     // Browser globals
