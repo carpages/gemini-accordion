@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.0.2
+
+  - Bump travis-ci node version
+  - Bump eslint core and plugin versions
+
 ## v1.0.1
 
   - Remove jshint in favour of eslint with custom ruleset
