@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.1.0
+
+  - Add option to pass a callback to the accordion open and close events
+  - Update linting of Gruntfile
+
 ## v1.0.2
 
   - Bump travis-ci node version
