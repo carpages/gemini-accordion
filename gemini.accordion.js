@@ -74,7 +74,43 @@ meaning the markup is quite manipulatable.
        * @type string
        * @default '.accordion__title'
        */
-      anchor: '.accordion__title'
+      anchor: '.accordion__title',
+
+      /**
+       * The class added to open accordions
+       *
+       * @name gemini.accordion#activeClass
+       * @type string
+       * @default 'is-active'
+       */
+      activeClass: 'is-active',
+
+      /**
+       * A class used to disable accordions
+       *
+       * @name gemini.accordion#disableClass
+       * @type string
+       * @default 'is-inactive'
+       */
+      disableClass: 'is-inactive',
+
+      /**
+       * A callback to be called when the accordion opens
+       *
+       * @name gemini.accordion#onOpen
+       * @type function
+       * @default false
+       */
+      onOpen: false,
+
+      /**
+       * A callback to be called when the accordion closes
+       *
+       * @name gemini.accordion#onClose
+       * @type function
+       * @default false
+       */
+      onClose: false
     },
 
     init: function() {
@@ -98,8 +134,45 @@ meaning the markup is quite manipulatable.
     toggle: function() {
       var plugin = this;
 
-      if ( !plugin.$el.hasClass( 'is-inactive' )) {
-        plugin.$el.toggleClass( 'is-active' );
+      if ( !plugin.$el.hasClass( plugin.settings.disableClass )) {
+        if ( !plugin.$el.hasClass( plugin.settings.activeClass )) {
+          plugin._open();
+        } else {
+          plugin._close();
+        }
+      }
+    },
+
+    /**
+     * Function used to open the accordion and call the provided callback
+     *
+     * @private
+     * @name gemini.accordion#_open
+     * @function
+    **/
+    _open: function() {
+      var plugin = this;
+
+      plugin.$el.addClass( plugin.settings.activeClass );
+
+      if ( plugin.settings.onOpen ) {
+        plugin.settings.onOpen.call( plugin );
+      }
+    },
+
+    /**
+     * Function used to close the accordion and call the provided callback
+     *
+     * @private
+     * @name gemini.accordion#_close
+     * @function
+    **/
+    _close: function() {
+      var plugin = this;
+
+      plugin.$el.removeClass( plugin.settings.activeClass );
+      if ( plugin.settings.onClose ) {
+        plugin.settings.onClose.call( plugin );
       }
     }
   });
