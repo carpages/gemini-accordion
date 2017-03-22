@@ -26,35 +26,37 @@
   overflow: hidden;
 }
 
-  /**
-   * @submodule Accordions Title [.accordion__title]
-   * @description The accordion title, which triggers the content
-   */
-  .accordion__title {
-    cursor: pointer;
-    @include vendor(user-select, none);
-  }
+/**
+  * @submodule Accordions Title [.accordion__title]
+  * @description The accordion title, which triggers the content
+  */
+.accordion__title {
+  cursor: pointer;
+  @include vendor(user-select, none);
+}
 
-  /**
-   * @submodule Accordions Content [.accordion__content]
-   * @description The accordion content, which shows and hides accordingly
-   */
-  .accordion__content {
-    display: none;
+/**
+  * @submodule Accordions Content [.accordion__content]
+  * @description The accordion content, which shows and hides accordingly
+  */
+.accordion__content {
+  display: none;
 
-    .accordion.is-active > & {
-      display: block;
-    }
+  .accordion.is-active > & {
+    display: block;
   }
+}
 
 @include media(medium) {
   .accordion--small {
     > .accordion__title {
       cursor: inherit;
+
       &:before {
         display: none;
       }
     }
+
     > .accordion__content {
       display: block;
     }
