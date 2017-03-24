@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.1.1
+
+  - Drop dependency on Ruby
+  - Use Carpages eslint config
+
 ## v1.1.0
 
   - Add option to pass a callback to the accordion open and close events
