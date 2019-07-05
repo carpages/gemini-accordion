@@ -1,7 +1,5 @@
 'use strict';
 
-var compassImporter = require( 'compass-importer' );
-
 module.exports = function( grunt ) {
   // Load all grunt tasks
   require( 'load-grunt-tasks' )( grunt );
@@ -46,7 +44,8 @@ module.exports = function( grunt ) {
     },
     sass: {
       options: {
-        importer: compassImporter,
+        implementation: require( 'node-sass' ),
+        importer: require( 'compass-importer' ),
         includePaths: [ 'bower_components' ]
       },
       dist: {
