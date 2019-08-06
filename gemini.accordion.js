@@ -57,14 +57,12 @@ meaning the markup is quite manipulatable.
     define([ 'gemini' ], factory );
   } else if ( typeof exports === 'object' ) {
     // Node/CommonJS
-    module.exports = factory(
-      require( 'gemini-loader' )
-    );
+    module.exports = factory( require( 'gemini-loader' ));
   } else {
     // Browser globals
     factory( G );
   }
-}( function( $ ) {
+})( function( $ ) {
   $.boiler( 'accordion', {
     defaults: {
       /**
@@ -130,7 +128,7 @@ meaning the markup is quite manipulatable.
      *
      * @method
      * @name gemini.accordion#toggle
-    **/
+     **/
     toggle: function() {
       var plugin = this;
 
@@ -149,7 +147,7 @@ meaning the markup is quite manipulatable.
      * @private
      * @name gemini.accordion#_open
      * @function
-    **/
+     **/
     _open: function() {
       var plugin = this;
 
@@ -166,7 +164,7 @@ meaning the markup is quite manipulatable.
      * @private
      * @name gemini.accordion#_close
      * @function
-    **/
+     **/
     _close: function() {
       var plugin = this;
 
@@ -180,4 +178,4 @@ meaning the markup is quite manipulatable.
   // Return the jquery object
   // This way you don't need to require both jquery and the plugin
   return $;
-}));
+});
